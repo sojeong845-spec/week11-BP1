@@ -224,17 +224,13 @@
     .menu-card[hidden] { display: none; }
 
     .menu-visual {
-      display: grid;
       height: 155px;
-      place-items: center;
+      overflow: hidden;
       border-radius: 14px;
-      background: var(--visual, var(--peach));
-      font-size: 72px;
+      background: #f3e7d8;
     }
 
-    .menu-card:nth-child(3n + 2) .menu-visual { --visual: #edf0df; }
-    .menu-card:nth-child(3n) .menu-visual { --visual: #f7e7e5; }
-    .menu-card:nth-child(4n) .menu-visual { --visual: #f6edcf; }
+    .menu-visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
     .menu-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 14px; }
     .menu-meta h3 { margin: 0; font-size: 17px; }
     .tag { color: #bd806e; font-size: 11px; font-weight: 700; }
@@ -320,7 +316,7 @@
       .cup { font-size: 160px; }
       .section { padding: 55px 0; }
       .menu-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .menu-visual { height: 125px; font-size: 58px; }
+      .menu-visual { height: 125px; }
       .story { grid-template-columns: 1fr; gap: 28px; }
       .story-art { min-height: 220px; }
     }
@@ -334,7 +330,7 @@
       .section-head { align-items: start; flex-direction: column; }
       .menu-grid { gap: 10px; }
       .menu-card { padding: 10px; border-radius: 16px; }
-      .menu-visual { height: 105px; font-size: 50px; }
+      .menu-visual { height: 105px; }
       .menu-meta h3 { font-size: 15px; }
       .menu-info { align-items: start; flex-direction: column; gap: 3px; }
       .visit { padding: 28px 18px; }
@@ -401,37 +397,43 @@
         </div>
         <div class="menu-grid" id="menuGrid">
           <article class="menu-card" data-category="drink">
-            <div class="menu-visual" aria-hidden="true">☕</div>
+            <div class="menu-visual"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="모모 크림 라떼 사진" loading="lazy" decoding="async"></div>
             <div class="menu-meta"><h3>모모 크림 라떼</h3><span class="tag">BEST</span></div>
             <div class="menu-info"><span>부드러운 수제 크림</span><span class="price">5,800원</span></div>
             <button class="add-button" type="button" aria-label="모모 크림 라떼 담기" data-name="모모 크림 라떼">+</button>
           </article>
           <article class="menu-card" data-category="drink">
-            <div class="menu-visual" aria-hidden="true">🍓</div>
+            <div class="menu-visual"><img src="https://images.pexels.com/photos/8284685/pexels-photo-8284685.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="딸기우유 사진" loading="lazy" decoding="async"></div>
             <div class="menu-meta"><h3>딸기 우유</h3><span class="tag">시즌 메뉴</span></div>
             <div class="menu-info"><span>달콤한 생딸기 듬뿍</span><span class="price">6,200원</span></div>
             <button class="add-button" type="button" aria-label="딸기 우유 담기" data-name="딸기 우유">+</button>
           </article>
+          <article class="menu-card" data-category="drink">
+            <div class="menu-visual"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="따뜻한 아메리카노 사진" loading="lazy" decoding="async"></div>
+            <div class="menu-meta"><h3>아메리카노</h3><span class="tag">고소한 원두</span></div>
+            <div class="menu-info"><span>매일 내리는 깊은 풍미</span><span class="price">4,500원</span></div>
+            <button class="add-button" type="button" aria-label="아메리카노 담기" data-name="아메리카노">+</button>
+          </article>
           <article class="menu-card" data-category="dessert">
-            <div class="menu-visual" aria-hidden="true">🍰</div>
-            <div class="menu-meta"><h3>딸기 생크림 케이크</h3><span class="tag">BEST</span></div>
+            <div class="menu-visual"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="초코 생크림 케이크 사진" loading="lazy" decoding="async"></div>
+            <div class="menu-meta"><h3>초코 생크림 케이크</h3><span class="tag">BEST</span></div>
             <div class="menu-info"><span>폭신한 시트와 생크림</span><span class="price">7,000원</span></div>
-            <button class="add-button" type="button" aria-label="딸기 생크림 케이크 담기" data-name="딸기 생크림 케이크">+</button>
+            <button class="add-button" type="button" aria-label="초코 생크림 케이크 담기" data-name="초코 생크림 케이크">+</button>
           </article>
           <article class="menu-card" data-category="drink">
-            <div class="menu-visual" aria-hidden="true">🍵</div>
+            <div class="menu-visual"><img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="말차 라떼 사진" loading="lazy" decoding="async"></div>
             <div class="menu-meta"><h3>말차 구름 라떼</h3><span class="tag">고소해요</span></div>
             <div class="menu-info"><span>진한 말차와 우유</span><span class="price">5,800원</span></div>
             <button class="add-button" type="button" aria-label="말차 구름 라떼 담기" data-name="말차 구름 라떼">+</button>
           </article>
           <article class="menu-card" data-category="dessert">
-            <div class="menu-visual" aria-hidden="true">🍪</div>
+            <div class="menu-visual"><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="초코칩 쿠키 사진" loading="lazy" decoding="async"></div>
             <div class="menu-meta"><h3>초코칩 쿠키</h3><span class="tag">갓 구웠어요</span></div>
             <div class="menu-info"><span>겉바속촉 수제 쿠키</span><span class="price">3,200원</span></div>
             <button class="add-button" type="button" aria-label="초코칩 쿠키 담기" data-name="초코칩 쿠키">+</button>
           </article>
           <article class="menu-card" data-category="dessert">
-            <div class="menu-visual" aria-hidden="true">🥐</div>
+            <div class="menu-visual"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="갓 구운 크루아상 사진" loading="lazy" decoding="async"></div>
             <div class="menu-meta"><h3>버터 크루아상</h3><span class="tag">매일 아침</span></div>
             <div class="menu-info"><span>고소한 프랑스산 버터</span><span class="price">4,000원</span></div>
             <button class="add-button" type="button" aria-label="버터 크루아상 담기" data-name="버터 크루아상">+</button>
@@ -456,8 +458,8 @@
       <div class="visit">
         <span class="section-kicker">COME SAY HELLO</span>
         <h2>모모에서 만나요!</h2>
-        <p>매일 10:00 - 20:00 · 매주 월요일은 쉬어가요</p>
-        <a class="button" href="https://map.naver.com/" target="_blank" rel="noopener noreferrer">동네 골목 12길, 모모 카페 📍</a>
+        <p>세종특별자치시 나성동 · 매일 10:00 - 20:00 · 매주 월요일은 쉬어가요</p>
+        <a class="button" href="https://map.naver.com/p/search/세종특별자치시%20나성동%20카페" target="_blank" rel="noopener noreferrer">세종특별자치시 나성동 모모 카페 📍</a>
       </div>
     </section>
   </main>
@@ -466,6 +468,7 @@
     <div class="footer-row wrap">
       <span>© 2026 momo's cafe. 오늘도 달콤한 하루 보내세요 ♡</span>
       <span>인스타그램 @momos.littlecafe</span>
+      <span>운영자: 김소정</span>
     </div>
   </footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
